@@ -613,3 +613,11 @@ footer .brand-mark{width:42px;height:42px;flex-basis:42px}
   .compare-card-head{gap:11px}
   .compare-icon-img{width:46px;height:46px;flex-basis:46px}
 }
+
+/* Brand mark is an image asset: keep its original artwork unobstructed. */
+.brand-mark{display:block;object-fit:contain;background:transparent;box-shadow:none;border-radius:0;font-size:initial;flex:0 0 auto}
+/* Keep the full navigation reachable on narrow screens without wrapping into the hero. */
+@media(max-width:760px){
+  .topbar nav{justify-content:flex-start;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:thin;max-width:100%;-webkit-overflow-scrolling:touch;padding:9px 2px 7px}
+  .topbar nav a{flex:0 0 auto}
+}
