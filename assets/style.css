@@ -407,3 +407,39 @@
 .release-notice .button{white-space:nowrap}
 @media(max-width:850px){.release-product-grid{grid-template-columns:1fr}.release-product-card>p{min-height:0}}
 @media(max-width:680px){.release-page{padding:0 18px 55px}.release-hero{padding:53px 0 38px}.release-hero h1{font-size:clamp(42px,11vw,55px);letter-spacing:-2.5px}.release-hero>p{font-size:13px}.release-hero-meta{gap:17px}.release-heading{align-items:flex-start;flex-direction:column}.release-heading h2{font-size:25px}.release-overview,.release-log-section{padding:28px 0}.release-product-card{padding:18px}.release-empty{padding:34px 18px}.release-notice{align-items:flex-start;flex-direction:column;padding:22px}.release-notice h2{font-size:23px}}
+
+
+/* EarnPlayApps quality polish — consistent, accessible, responsive */
+:root{--surface-glass:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));--shadow-premium:0 22px 65px rgba(0,0,0,.28)}
+::selection{background:rgba(138,124,255,.38);color:#fff}
+html{scroll-padding-top:24px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.topbar{position:relative;z-index:5}
+nav a,.footer-links a,.top-cta,.button,.card-link{transition:color .18s ease,border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease}
+nav a[aria-current="page"]{color:var(--cyan)}
+.button:hover,.top-cta:hover{transform:translateY(-2px)}
+.primary:hover{box-shadow:0 14px 36px rgba(109,105,255,.42)}
+.secondary:hover,.top-cta:hover{border-color:rgba(75,220,242,.42);background:rgba(255,255,255,.07)}
+.app-card,.store-card,.help-topic-card,.release-product-card,.support-action-card,.detail-card,.feature{box-shadow:0 10px 34px rgba(0,0,0,.12)}
+.app-card:focus-within,.store-card:focus-within,.help-topic-card:focus-within,.release-product-card:focus-within{border-color:rgba(75,220,242,.55)}
+input,textarea,select,button{font:inherit}
+img,svg{max-width:100%}
+p{line-height:1.75}
+@media(max-width:760px){
+ .topbar nav{overflow-x:auto;justify-content:flex-start;white-space:nowrap;scrollbar-width:none}
+ .topbar nav::-webkit-scrollbar{display:none}
+ .hero h1{letter-spacing:-2.8px}
+ .store-hero{padding:52px 20px 38px}
+ .store-hero h1{letter-spacing:-2.5px}
+ .plain-page{margin:42px auto 65px}
+}
+@media(max-width:390px){
+ .brand{font-size:15px;gap:8px}
+ .brand-mark{width:35px;height:35px}
+ .top-cta{padding:8px 9px}
+ .hero h1{font-size:clamp(39px,12vw,48px)}
+ .button{padding:12px 14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .app-card:hover,.help-topic-card:hover,.button:hover,.top-cta:hover{transform:none}
+}
