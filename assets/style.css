@@ -443,3 +443,64 @@ p{line-height:1.75}
 @media(prefers-reduced-motion:reduce){
  .app-card:hover,.help-topic-card:hover,.button:hover,.top-cta:hover{transform:none}
 }
+
+/* EarnPlayApps premium brand lockup */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-width:max-content;
+  font-size:inherit;
+  font-weight:700;
+  letter-spacing:0;
+}
+.brand-mark{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  border:1px solid rgba(220,226,255,.34);
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:21px;
+  font-weight:850;
+  letter-spacing:-1px;
+  background:linear-gradient(145deg,rgba(166,151,255,.92),rgba(66,83,190,.82) 58%,rgba(45,203,226,.72));
+  box-shadow:0 8px 22px rgba(88,101,222,.25),inset 0 1px 1px rgba(255,255,255,.42);
+}
+.brand-name{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:3px;
+  color:#f7f8ff;
+  font-size:19px;
+  line-height:1.08;
+  font-weight:850;
+  letter-spacing:-.75px;
+  white-space:nowrap;
+}
+.brand-name small{
+  display:block;
+  color:#9ba9c8;
+  font-size:8px;
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:1.55px;
+  text-transform:uppercase;
+}
+footer .brand-name{font-size:17px}
+footer .brand-mark{width:40px;height:40px;flex-basis:40px}
+@media(max-width:760px){
+  .brand{gap:10px}
+  .brand-mark{width:39px;height:39px;flex-basis:39px;border-radius:12px;font-size:19px}
+  .brand-name{font-size:17px;letter-spacing:-.55px}
+  .brand-name small{font-size:7px;letter-spacing:1.25px}
+}
+@media(max-width:390px){
+  .brand{gap:8px}
+  .brand-mark{width:36px;height:36px;flex-basis:36px}
+  .brand-name{font-size:16px}
+}
+
