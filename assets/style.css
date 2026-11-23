@@ -594,3 +594,22 @@ footer .brand-mark{width:42px;height:42px;flex-basis:42px}
 .showcase-product-icon{object-fit:contain;background:transparent;border:0;box-shadow:none;padding:0;border-radius:12px}
 
 .showcase-official-icon{display:block;width:104px;height:104px;object-fit:contain;margin:17px 0 12px;filter:drop-shadow(0 12px 22px #0007)}
+
+/* Product identity consistency and small-screen navigation */
+.release-product-icon-img{display:block;width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 7px 12px #0006)}
+.compare-icon-img{display:block;width:54px;height:54px;object-fit:contain;flex:0 0 54px;filter:drop-shadow(0 8px 14px #0006)}
+.compare-card-head{align-items:center}
+@media(max-width:760px){
+  .topbar nav{justify-content:flex-start;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:18px;padding:9px 2px 7px}
+  .topbar nav::-webkit-scrollbar{display:none}
+  .topbar nav a{flex:0 0 auto}
+}
+@media(max-width:420px){
+  .brand{gap:8px;font-size:15px}
+  .brand-mark{width:35px;height:35px}
+  .top-cta{max-width:116px;white-space:nowrap}
+  .hero h1{font-size:clamp(42px,12vw,52px);letter-spacing:-2.5px}
+  .hero-actions{flex-wrap:wrap}
+  .compare-card-head{gap:11px}
+  .compare-icon-img{width:46px;height:46px;flex-basis:46px}
+}
