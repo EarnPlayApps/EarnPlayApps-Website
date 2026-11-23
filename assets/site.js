@@ -57,7 +57,7 @@ function renderAppCard(app) {
   return `
     <article class="app-card">
       <a class="app-card-visual" href="app.html?id=${id}" aria-label="Explore ${escapeHTML(app.name)}">
-        ${previewMarkup(app.previewType, true)}
+        ${appIconMarkup(app.previewType, "app-card-official-icon")}<span class="app-card-visual-label">OFFICIAL APP ICON</span>
         <span class="app-card-visual-label">PRODUCT PREVIEW</span>
       </a>
       <div class="app-card-content">
