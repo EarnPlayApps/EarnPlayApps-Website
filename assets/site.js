@@ -1,1 +1,104 @@
-const $=s=>document.querySelector(s);const year=$("#year");if(year)year.textContent=new Date().getFullYear();async function loadApps(){try{const res=await fetch("apps.json");const apps=await res.json();const grid=$("#app-grid");if(grid)grid.innerHTML=apps.map(a=>'<article class="app-card"><div class="app-icon '+a.theme+'">'+a.icon+'</div><h3>'+a.name+'</h3><p>'+a.tagline+'</p><div class="meta"><span>'+a.category+'</span><span class="status">'+a.status+'</span></div><a class="card-link" href="app.html?id='+encodeURIComponent(a.id)+'">View app details →</a></article>').join("");const detail=$("#app-detail");if(detail){const id=new URLSearchParams(location.search).get("id");const a=apps.find(x=>x.id===id);if(!a){detail.innerHTML='<div class="detail-card"><h1>App not found</h1><p>This app could not be found in our directory.</p><a class="button primary" href="index.html#apps">Back to apps →</a></div>';return}document.title=a.name+' — EarnPlayApps';detail.innerHTML='<div class="detail-card"><div class="app-icon '+a.theme+'">'+a.icon+'</div><div class="eyebrow">'+a.category.toUpperCase()+'</div><h1>'+a.name+'</h1><h3>'+a.tagline+'</h3><p>'+a.description+'</p><div class="feature-list">'+a.features.map(f=>'<div class="feature">✓ &nbsp;'+f+'</div>').join("")+'</div><p><span class="status">'+a.status+'</span> &nbsp; <span class="meta">Version: '+a.version+'</span></p>'+(a.download?'<a class="button primary" href="'+a.download+'">Download APK →</a>':'<div class="notice">The verified APK is not available yet. Check back here for the official release.</div>')+'</div>'}}catch(e){const grid=$("#app-grid");if(grid)grid.innerHTML='<p>App directory is temporarily unavailable. Please try again later.</p>'}}loadApps();
+const $ = (selector) => document.querySelector(selector);
+
+const year = $("#year");
+if (year) year.textContent = String(new Date().getFullYear());
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function safeDownloadURL(value) {
+  if (typeof value !== "string" || !value.trim()) return null;
+  try {
+    const url = new URL(value, window.location.href);
+    if (url.protocol !== "https:" && url.origin !== window.location.origin) return null;
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    return escapeHTML(url.href);
+  } catch {
+    return null;
+  }
+}
+
+function renderAppCard(app) {
+  const id = encodeURIComponent(app.id);
+  return `
+    <article class="app-card">
+      <div class="app-icon ${escapeHTML(app.theme)}" aria-hidden="true">${escapeHTML(app.icon)}</div>
+      <h3>${escapeHTML(app.name)}</h3>
+      <p>${escapeHTML(app.tagline)}</p>
+      <div class="meta">
+        <span>${escapeHTML(app.category)}</span>
+        <span class="status">${escapeHTML(app.status)}</span>
+      </div>
+      <a class="card-link" href="app.html?id=${id}">View app details →</a>
+    </article>`;
+}
+
+function renderAppDetail(detail, app, apps) {
+  if (!app) {
+    detail.innerHTML = `
+      <div class="detail-card">
+        <h1>App not found</h1>
+        <p>This app could not be found in our directory.</p>
+        <a class="button primary" href="index.html#apps">Back to apps →</a>
+      </div>`;
+    return;
+  }
+
+  document.title = `${app.name} — EarnPlayApps`;
+  const features = Array.isArray(app.features) ? app.features : [];
+  const downloadURL = safeDownloadURL(app.download);
+  detail.innerHTML = `
+    <div class="detail-card">
+      <div class="app-icon ${escapeHTML(app.theme)}" aria-hidden="true">${escapeHTML(app.icon)}</div>
+      <div class="eyebrow">${escapeHTML(app.category).toUpperCase()}</div>
+      <h1>${escapeHTML(app.name)}</h1>
+      <h3>${escapeHTML(app.tagline)}</h3>
+      <p>${escapeHTML(app.description)}</p>
+      <div class="feature-list">
+        ${features.map((feature) => `<div class="feature">✓ &nbsp;${escapeHTML(feature)}</div>`).join("")}
+      </div>
+      <p><span class="status">${escapeHTML(app.status)}</span> &nbsp; <span class="meta">Version: ${escapeHTML(app.version)}</span></p>
+      ${downloadURL && app.status === "Available" ? `<a class="button primary" href="${downloadURL}" rel="noopener">Download APK →</a>` : '<div class="notice">The verified APK is not available yet. Check back here for the official release.</div>'}
+      <p><a href="index.html#apps">Back to all apps →</a></p>
+    </div>`;
+}
+
+async function loadApps() {
+  const grid = $("#app-grid");
+  const detail = $("#app-detail");
+
+  try {
+    const response = await fetch("apps.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("App directory request failed");
+
+    const apps = await response.json();
+    if (!Array.isArray(apps)) throw new Error("App directory format is invalid");
+
+    if (grid) {
+      grid.innerHTML = apps.length
+        ? apps.map(renderAppCard).join("")
+        : "<p>New apps are being prepared. Please check back soon.</p>";
+    }
+
+    if (detail) {
+      const id = new URLSearchParams(window.location.search).get("id");
+      renderAppDetail(detail, apps.find((app) => app.id === id), apps);
+    }
+  } catch {
+    if (grid) {
+      grid.innerHTML = "<p>App directory is temporarily unavailable. Please try again later.</p>";
+    }
+    if (detail) {
+      detail.innerHTML = '<div class="detail-card"><h1>Unable to load app details</h1><p>Please check your connection and try again.</p><a class="button primary" href="index.html#apps">Back to apps →</a></div>';
+    }
+  }
+}
+
+loadApps();
