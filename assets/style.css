@@ -567,3 +567,13 @@ footer .brand-mark{width:42px;height:42px;flex-basis:42px}
 .hero-icon-stage span{font-size:9px;letter-spacing:2px;font-weight:800;color:#a9c8d5;text-shadow:0 2px 12px #000}
 .hero-visual .glass-panel{z-index:1;margin-top:0;padding-top:91px;transform:rotate(1deg)}
 @media(max-width:760px){.hero-visual{min-height:0;padding:8px 0 20px}.hero-icon-stage img{width:150px;height:150px}.hero-icon-stage{margin-bottom:-66px}.hero-visual .glass-panel{width:min(100%,390px);padding-top:82px}}
+
+
+/* Consistent EarnPlayApps brand signature across product cards and detail pages */
+.brand-mark{display:block;object-fit:contain;background:transparent;box-shadow:none;border-radius:0;padding:0}
+.studio-signature{display:flex;align-items:center;gap:7px;margin:0 0 12px;color:#9ba9c8;font-size:8px;font-weight:800;letter-spacing:1.35px;line-height:1.2}
+.studio-signature img{width:19px;height:19px;display:block;object-fit:contain;filter:drop-shadow(0 2px 6px #1bc8bd44)}
+.product-signature{margin-bottom:13px}
+.product-signature img{width:24px;height:24px}
+.app-card-content .studio-signature,.store-card-content .studio-signature{padding-bottom:10px;border-bottom:1px solid var(--line)}
+@media(max-width:600px){.studio-signature{font-size:7px;letter-spacing:1.1px}}
