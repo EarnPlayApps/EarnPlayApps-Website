@@ -58,7 +58,6 @@ function renderAppCard(app) {
     <article class="app-card">
       <a class="app-card-visual app-card-icon-visual" href="app.html?id=${id}" aria-label="Explore ${escapeHTML(app.name)}">
         ${appIconMarkup(app.previewType, "app-card-official-icon")}<span class="app-card-visual-label">OFFICIAL APP ICON</span>
-        <span class="app-card-visual-label">PRODUCT PREVIEW</span>
       </a>
       <div class="app-card-content">
         <div class="studio-signature"><img src="assets/epa-mark.svg" alt="" aria-hidden="true"><span>AN EARNPLAYAPPS PRODUCT</span></div>
