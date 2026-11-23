@@ -44,9 +44,10 @@ function renderAppDetail(detail, app, apps) {
   if (!app) {
     detail.innerHTML = `
       <div class="detail-card">
+        <div class="eyebrow">EARNPLAYAPPS STORE</div>
         <h1>App not found</h1>
-        <p>This app could not be found in our directory.</p>
-        <a class="button primary" href="index.html#apps">Back to apps →</a>
+        <p>This app could not be found in our official directory.</p>
+        <a class="button primary" href="store.html">Back to Store →</a>
       </div>`;
     return;
   }
@@ -54,22 +55,36 @@ function renderAppDetail(detail, app, apps) {
   document.title = `${app.name} — EarnPlayApps`;
   const features = Array.isArray(app.features) ? app.features : [];
   const downloadURL = safeDownloadURL(app.download);
+  const isAvailable = Boolean(downloadURL && app.status === "Available");
   detail.innerHTML = `
-    <div class="detail-card">
-      <div class="app-icon ${escapeHTML(app.theme)}" aria-hidden="true">${escapeHTML(app.icon)}</div>
-      <div class="eyebrow">${escapeHTML(app.category).toUpperCase()}</div>
-      <h1>${escapeHTML(app.name)}</h1>
-      <h3>${escapeHTML(app.tagline)}</h3>
-      <p>${escapeHTML(app.description)}</p>
-      <div class="feature-list">
-        ${features.map((feature) => `<div class="feature">✓ &nbsp;${escapeHTML(feature)}</div>`).join("")}
+    <div class="product-detail">
+      <div class="product-heading">
+        <div class="app-icon product-icon ${escapeHTML(app.theme)}" aria-hidden="true">${escapeHTML(app.icon)}</div>
+        <div class="product-heading-copy">
+          <div class="eyebrow">${escapeHTML(app.category).toUpperCase()} · OFFICIAL APP</div>
+          <h1>${escapeHTML(app.name)}</h1>
+          <p class="product-tagline">${escapeHTML(app.tagline)}</p>
+          <span class="status">${escapeHTML(app.status)}</span>
+        </div>
       </div>
-      <p><span class="status">${escapeHTML(app.status)}</span> &nbsp; <span class="meta">Version: ${escapeHTML(app.version)}</span></p>
-      ${downloadURL && app.status === "Available" ? `<a class="button primary" href="${downloadURL}" rel="noopener">Download APK →</a>` : '<div class="notice">The verified APK is not available yet. Check back here for the official release.</div>'}
-      <p><a href="index.html#apps">Back to all apps →</a></p>
+      <div class="product-description">
+        <h2>About this app</h2>
+        <p>${escapeHTML(app.description)}</p>
+      </div>
+      <div class="product-features">
+        <h2>Key features</h2>
+        <div class="feature-list">
+          ${features.map((feature) => `<div class="feature"><span aria-hidden="true">✓</span> ${escapeHTML(feature)}</div>`).join("")}
+        </div>
+      </div>
+      <aside class="product-purchase">
+        <div><span class="purchase-label">OFFICIAL RELEASE</span><strong>${isAvailable ? "Ready to download" : "Coming soon"}</strong><small>Version: ${escapeHTML(app.version)}</small></div>
+        ${isAvailable ? `<a class="button primary" href="${downloadURL}" rel="noopener">Download APK →</a>` : '<span class="purchase-disabled">Pricing and purchase options will be announced after release.</span>'}
+      </aside>
+      <div class="product-support"><p>Need help or have a question about this app?</p><a href="support.html">Contact EarnPlayApps support →</a></div>
+      <a class="product-back" href="store.html">← Browse all apps in Store</a>
     </div>`;
 }
-
 async function loadApps() {
   const grid = $("#app-grid");
   const detail = $("#app-detail");
