@@ -589,3 +589,6 @@ footer .brand-mark{width:42px;height:42px;flex-basis:42px}
 .app-card-icon-visual .app-card-visual-label{position:absolute;bottom:13px;left:15px}
 .store-card-icon-visual .visual-open{position:absolute;right:14px;bottom:13px}
 @media(max-width:600px){.app-card-icon-visual,.store-card-icon-visual{min-height:190px}.product-icon-wrap{min-height:260px}.product-detail-icon{width:min(76vw,250px)}}
+
+.product-mini-icon{object-fit:contain;background:transparent;box-shadow:none;border-radius:12px}
+.showcase-product-icon{object-fit:contain;background:transparent;border:0;box-shadow:none;padding:0;border-radius:12px}
