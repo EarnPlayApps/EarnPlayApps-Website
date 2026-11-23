@@ -18,6 +18,13 @@ function safeDownloadURL(value) {
   } catch { return null; }
 }
 
+function appIconMarkup(type, extraClass = "") {
+  const icons = { convert: "all-convert-icon.svg", qr: "qr-scanner-icon.svg", calculator: "e-calculator-icon.svg" };
+  const file = icons[type] || icons.convert;
+  const names = { convert: "All Convert", qr: "QR Scanner", calculator: "E-Calculator" };
+  return `<img class="product-app-icon ${extraClass}" src="assets/${file}" alt="${names[type] || "EarnPlayApps app"} icon" loading="lazy">`;
+}
+
 function previewMarkup(type, compact = false) {
   const cls = compact ? "ui-preview ui-preview-compact" : "ui-preview";
   if (type === "qr") return `
@@ -104,7 +111,7 @@ function renderAppDetail(detail, app) {
           <div class="product-status-line"><span class="status">${escapeHTML(app.status)}</span><span>Version ${escapeHTML(app.version)}</span></div>
           <p class="product-audience">${escapeHTML(app.audience || "")}</p>
         </div>
-        <div class="product-preview-wrap"><div class="preview-glow"></div>${previewMarkup(app.previewType)}<span class="preview-caption">ILLUSTRATIVE PRODUCT PREVIEW</span></div>
+        <div class="product-preview-wrap product-icon-wrap"><div class="preview-glow"></div>${appIconMarkup(app.previewType, "product-detail-icon")}<span class="preview-caption">OFFICIAL PRODUCT ICON</span></div>
       </section>
       <section class="product-description"><div class="eyebrow">THE PRODUCT</div><h2>Designed around your everyday tasks.</h2><p>${escapeHTML(app.description)}</p></section>
       <section class="product-features"><div class="eyebrow">WHAT YOU CAN DO</div><h2>Features built around real use.</h2><div class="feature-list">${features.map((feature) => `<div class="feature"><span aria-hidden="true">✓</span><span>${escapeHTML(feature)}</span></div>`).join("")}</div></section>
@@ -141,7 +148,7 @@ function renderStoreCard(app) {
   const starting = app.plans?.find((plan) => plan.name === "Pro Monthly")?.monthly || "Coming soon";
   return `
     <article class="store-product-card">
-      <a class="store-card-visual" href="app.html?id=${id}" aria-label="Preview ${escapeHTML(app.name)}">${previewMarkup(app.previewType, true)}<span class="visual-open">EXPLORE PRODUCT ↗</span></a>
+      <a class="store-card-visual store-card-icon-visual" href="app.html?id=${id}" aria-label="Explore ${escapeHTML(app.name)}">${appIconMarkup(app.previewType)}<span class="visual-open">EXPLORE PRODUCT ↗</span></a>
       <div class="store-card-content">
         <div class="studio-signature"><img src="assets/epa-mark.svg" alt="" aria-hidden="true"><span>AN EARNPLAYAPPS PRODUCT</span></div>
         <div class="store-card-kicker"><span>${escapeHTML(app.category)}</span><span class="status">${escapeHTML(app.status)}</span></div>
