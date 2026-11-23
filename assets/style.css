@@ -364,3 +364,46 @@
 .support-action-card>span:last-child{margin-top:auto;color:var(--cyan);font-size:11px;font-weight:800}
 @media(max-width:900px){.help-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.help-page{padding:0 18px 55px}.help-hero{padding:53px 0 38px}.help-hero h1{font-size:clamp(40px,11vw,52px);letter-spacing:-2.5px}.help-hero>p{font-size:13px}.help-search-wrap{margin-top:23px;padding:12px}.help-topic-section,.help-faq-section{padding:28px 0}.help-section-heading{align-items:flex-start;flex-direction:column;gap:10px}.help-section-heading h2{font-size:25px}.help-topic-grid{grid-template-columns:1fr;gap:10px}.help-topic-card{min-height:145px}.help-topic-card b{margin-top:12px}.help-faq summary{min-height:55px;padding:14px 42px 14px 14px;font-size:11px}.help-faq p{padding:0 14px 15px;font-size:11px}.help-contact{align-items:flex-start;flex-direction:column;padding:22px;margin-top:25px}.help-contact h2{font-size:24px}.support-action-grid{grid-template-columns:1fr}.support-page{margin-top:40px}}
+
+
+/* EarnPlayApps Release & Update Center */
+.release-page{max-width:1120px;margin:0 auto;padding:0 28px 80px}
+.release-hero{max-width:850px;padding:76px 0 57px}
+.release-hero h1{font-size:clamp(48px,7vw,72px);letter-spacing:-3.5px;line-height:1.02;margin:18px 0}
+.release-hero h1 span{background:linear-gradient(90deg,#a99bff,#58dff2);background-clip:text;color:transparent}
+.release-hero>p{max-width:620px;color:var(--muted);font-size:15px;line-height:1.8}
+.release-hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px;padding-top:21px;border-top:1px solid var(--line)}
+.release-hero-meta span{color:#9baaca;font-size:10px;letter-spacing:.5px}
+.release-hero-meta b{display:block;margin-bottom:5px;color:#eaf0ff;font-size:12px;letter-spacing:1px}
+.release-overview,.release-log-section{padding:37px 0;border-top:1px solid var(--line)}
+.release-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:22px}
+.release-heading h2{margin:7px 0;font-size:29px;letter-spacing:-1px}
+.release-heading p{margin:0;color:var(--muted);font-size:12px}
+.release-chip{padding:8px 12px;border:1px solid var(--line);border-radius:30px;color:var(--cyan);font-size:9px;font-weight:850;letter-spacing:1.2px}
+.release-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.release-product-card{display:flex;min-width:0;flex-direction:column;padding:21px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#172344bb,#0d1730dd)}
+.release-product-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.release-product-icon{display:grid;width:43px;height:43px;place-items:center;border-radius:13px;font-size:12px;font-weight:900}
+.release-product-icon.convert{background:linear-gradient(145deg,#a18aff,#5547bb);color:white}
+.release-product-icon.qr{background:linear-gradient(145deg,#ffb45c,#dc6d36);color:#24160f}
+.release-product-icon.calc{background:linear-gradient(145deg,#6dcbef,#3972c7);color:#071a35}
+.release-status{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid #f2bd6944;border-radius:20px;color:#f1c887;font-size:9px;white-space:nowrap}
+.release-status i{width:6px;height:6px;border-radius:50%;background:#e9b65f}
+.release-product-card h3{margin:19px 0 7px;font-size:18px}
+.release-product-card>p{min-height:58px;margin:0 0 18px;color:var(--muted);font-size:11px;line-height:1.7}
+.release-product-meta{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:10px}
+.release-product-meta span{color:#93a1c0}
+.release-product-meta b{color:#e5ebff;font-size:10px;text-align:right}
+.release-product-card>a{margin-top:13px;color:var(--cyan);font-size:10px;font-weight:800}
+.release-log-section{padding-bottom:44px}
+.release-empty{display:flex;align-items:center;flex-direction:column;padding:43px 24px;border:1px dashed #7e83b855;border-radius:18px;background:linear-gradient(145deg,#ffffff08,#ffffff02);text-align:center}
+.release-empty-mark{display:grid;width:58px;height:58px;place-items:center;border:1px solid #8e83ff66;border-radius:18px;background:linear-gradient(145deg,#8172ff33,#42d9ed22);color:#c7c1ff;font-size:13px;font-weight:900;letter-spacing:2px}
+.release-empty h3{margin:18px 0 7px;font-size:19px}
+.release-empty p{max-width:540px;margin:0;color:var(--muted);font-size:12px;line-height:1.8}
+.release-empty>span{margin-top:18px;color:var(--cyan);font-size:9px;font-weight:850;letter-spacing:1.2px}
+.release-notice{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:28px 0 0;padding:27px;border:1px solid #8d83ff44;border-radius:19px;background:linear-gradient(110deg,#5148a633,#1c8ca522)}
+.release-notice h2{margin:7px 0;font-size:25px;letter-spacing:-.7px}
+.release-notice p{max-width:550px;margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+.release-notice .button{white-space:nowrap}
+@media(max-width:850px){.release-product-grid{grid-template-columns:1fr}.release-product-card>p{min-height:0}}
+@media(max-width:680px){.release-page{padding:0 18px 55px}.release-hero{padding:53px 0 38px}.release-hero h1{font-size:clamp(42px,11vw,55px);letter-spacing:-2.5px}.release-hero>p{font-size:13px}.release-hero-meta{gap:17px}.release-heading{align-items:flex-start;flex-direction:column}.release-heading h2{font-size:25px}.release-overview,.release-log-section{padding:28px 0}.release-product-card{padding:18px}.release-empty{padding:34px 18px}.release-notice{align-items:flex-start;flex-direction:column;padding:22px}.release-notice h2{font-size:23px}}
