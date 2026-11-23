@@ -56,7 +56,7 @@ function renderAppCard(app) {
   const id = encodeURIComponent(app.id);
   return `
     <article class="app-card">
-      <a class="app-card-visual" href="app.html?id=${id}" aria-label="Explore ${escapeHTML(app.name)}">
+      <a class="app-card-visual app-card-icon-visual" href="app.html?id=${id}" aria-label="Explore ${escapeHTML(app.name)}">
         ${appIconMarkup(app.previewType, "app-card-official-icon")}<span class="app-card-visual-label">OFFICIAL APP ICON</span>
         <span class="app-card-visual-label">PRODUCT PREVIEW</span>
       </a>
