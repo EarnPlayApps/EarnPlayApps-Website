@@ -577,3 +577,15 @@ footer .brand-mark{width:42px;height:42px;flex-basis:42px}
 .product-signature img{width:24px;height:24px}
 .app-card-content .studio-signature,.store-card-content .studio-signature{padding-bottom:10px;border-bottom:1px solid var(--line)}
 @media(max-width:600px){.studio-signature{font-size:7px;letter-spacing:1.1px}}
+
+/* Official individual product icons */
+.product-app-icon{display:block;width:100%;height:auto;max-width:220px;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 22px 34px #0008) drop-shadow(0 0 24px #25cbbd24)}
+.app-card-icon-visual,.store-card-icon-visual{min-height:210px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 38%,#31456b 0,#172344 48%,#0c1630 100%)}
+.app-card-icon-visual .product-app-icon,.store-card-icon-visual .product-app-icon{width:min(72%,190px);max-width:190px}
+.product-icon-wrap{min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;position:relative}
+.product-detail-icon{width:min(100%,300px);max-width:300px}
+.product-icon-wrap .preview-glow{position:absolute;width:250px;height:250px;border-radius:50%;background:#35d9cf22;filter:blur(38px);z-index:0}
+.product-icon-wrap .product-app-icon,.product-icon-wrap .preview-caption{position:relative;z-index:1}
+.app-card-icon-visual .app-card-visual-label{position:absolute;bottom:13px;left:15px}
+.store-card-icon-visual .visual-open{position:absolute;right:14px;bottom:13px}
+@media(max-width:600px){.app-card-icon-visual,.store-card-icon-visual{min-height:190px}.product-icon-wrap{min-height:260px}.product-detail-icon{width:min(76vw,250px)}}
