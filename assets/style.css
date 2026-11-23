@@ -558,3 +558,12 @@ footer .brand-mark{width:40px;height:40px;flex-basis:40px}
 footer .brand-mark{width:42px;height:42px;flex-basis:42px}
 .brand{gap:12px}
 @media(max-width:760px){.brand-mark{width:40px;height:40px;flex-basis:40px}}
+
+
+/* Homepage: make the official EPA app icon the visual signature */
+.hero-visual{display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:4px 0 18px}
+.hero-icon-stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;margin:0 auto -72px}
+.hero-icon-stage img{display:block;width:174px;height:174px;object-fit:contain;border-radius:34px;filter:drop-shadow(0 18px 32px #00d6ca35) drop-shadow(0 8px 18px #0009)}
+.hero-icon-stage span{font-size:9px;letter-spacing:2px;font-weight:800;color:#a9c8d5;text-shadow:0 2px 12px #000}
+.hero-visual .glass-panel{z-index:1;margin-top:0;padding-top:91px;transform:rotate(1deg)}
+@media(max-width:760px){.hero-visual{min-height:0;padding:8px 0 20px}.hero-icon-stage img{width:150px;height:150px}.hero-icon-stage{margin-bottom:-66px}.hero-visual .glass-panel{width:min(100%,390px);padding-top:82px}}
