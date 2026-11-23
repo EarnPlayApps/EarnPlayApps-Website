@@ -1,5 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-<title id="title">EarnPlayApps EPA app icon</title><desc id="desc">Geometric EPA monogram inside a premium rounded app-icon frame.</desc>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263B38"/><stop offset=".58" stop-color="#17191D"/><stop offset="1" stop-color="#102b29"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F3D49B"/><stop offset=".45" stop-color="#C58B45"/><stop offset="1" stop-color="#8D5B27"/></linearGradient><linearGradient id="pearl" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#CFC8BA"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8"/></filter></defs>
-<rect x="24" y="24" width="464" height="464" rx="112" fill="#000" opacity=".45" filter="url(#shadow)"/><rect x="22" y="22" width="468" height="468" rx="112" fill="url(#bg)" stroke="url(#gold)" stroke-width="12"/><rect x="39" y="39" width="434" height="434" rx="96" fill="none" stroke="#F3EFE7" stroke-opacity=".2" stroke-width="3"/>
-<path d="M94 160H222 M94 256H205 M94 352H222 M94 160V352" fill="none" stroke="url(#gold)" stroke-width="34" stroke-linecap="square" stroke-linejoin="miter"/><path d="M226 352V160H321C378 160 378 254 321 254H226" fill="none" stroke="url(#pearl)" stroke-width="32" stroke-linecap="square" stroke-linejoin="round"/><path d="M273 352L369 160L454 352 M311 278H423" fill="none" stroke="url(#gold)" stroke-width="30" stroke-linecap="square" stroke-linejoin="miter"/><path d="M77 403C178 446 330 431 431 371" fill="none" stroke="url(#gold)" stroke-width="11" stroke-linecap="round"/><g fill="#F3EFE7"><rect x="353" y="382" width="22" height="22" rx="4"/><rect x="383" y="382" width="22" height="22" rx="4"/></g><g fill="#C58B45"><rect x="353" y="412" width="22" height="22" rx="4"/><rect x="383" y="412" width="22" height="22" rx="4"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="t d">
+<title id="t">EarnPlayApps EPA app icon</title><desc id="d">Gold and pearl EPA monogram inside a glossy emerald glass app icon.</desc>
+<defs>
+ <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0c8"/><stop offset=".18" stop-color="#C58B45"/><stop offset=".42" stop-color="#fff0bd"/><stop offset=".68" stop-color="#8b531e"/><stop offset="1" stop-color="#f5c879"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#071b1b"/><stop offset=".48" stop-color="#06433f"/><stop offset="1" stop-color="#071c20"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#fff0b6"/><stop offset=".22" stop-color="#f4bd58"/><stop offset=".53" stop-color="#b96e19"/><stop offset=".78" stop-color="#ffe2a0"/><stop offset="1" stop-color="#8b4c13"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".48" stop-color="#d9d9d5"/><stop offset="1" stop-color="#9b9a96"/></linearGradient>
+ <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".68"/><stop offset=".42" stop-color="#36e5db" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <filter id="drop" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="10"/></filter>
+ <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="30" y="35" width="452" height="452" rx="105" fill="#000" opacity=".8" filter="url(#drop)"/>
+<rect x="24" y="22" width="464" height="468" rx="106" fill="url(#frame)"/>
+<rect x="34" y="32" width="444" height="448" rx="96" fill="#111a1b" stroke="#fff0c8" stroke-opacity=".85" stroke-width="3"/>
+<rect x="46" y="44" width="420" height="424" rx="84" fill="url(#glass)" stroke="#20c9c1" stroke-opacity=".72" stroke-width="4"/>
+<path d="M80 62H421L320 210H82Z" fill="url(#shine)"/>
+<path d="M115 52L258 52L130 230H48V165Z" fill="#fff" opacity=".08"/>
+<path d="M94 170H224 M94 251H209 M94 333H224 M94 170V333" fill="none" stroke="url(#gold)" stroke-width="34" stroke-linecap="square" stroke-linejoin="miter" filter="url(#glow)"/>
+<path d="M226 333V170H321C382 170 382 254 321 254H226" fill="none" stroke="url(#silver)" stroke-width="34" stroke-linecap="square" stroke-linejoin="round" filter="url(#glow)"/>
+<path d="M274 355L369 170L455 355 M311 280H423" fill="none" stroke="url(#gold)" stroke-width="31" stroke-linecap="square" stroke-linejoin="miter" filter="url(#glow)"/>
+<path d="M57 331C132 390 222 372 303 309C367 259 411 203 451 190" fill="none" stroke="#42220b" stroke-width="24" stroke-linecap="round" opacity=".8"/>
+<path d="M57 320C132 379 222 361 303 298C367 248 411 192 451 179" fill="none" stroke="url(#gold)" stroke-width="16" stroke-linecap="round" filter="url(#glow)"/>
+<path d="M57 315C132 374 222 356 303 293C367 243 411 187 451 174" fill="none" stroke="#fff4d0" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+<g fill="url(#gold)" stroke="#ffe4a5" stroke-width="2"><rect x="355" y="365" width="23" height="23" rx="3"/><rect x="389" y="365" width="23" height="23" rx="3"/><rect x="355" y="399" width="23" height="23" rx="3"/><rect x="389" y="399" width="23" height="23" rx="3"/></g>
+<path d="M65 445C171 475 340 470 446 424" fill="none" stroke="#20d4cb" stroke-opacity=".7" stroke-width="4"/>
+<path d="M67 57H445" stroke="#fff" stroke-opacity=".65" stroke-width="3" stroke-linecap="round"/>
+<circle cx="79" cy="161" r="5" fill="#fff4d0" filter="url(#glow)"/><circle cx="445" cy="354" r="5" fill="#fff4d0" filter="url(#glow)"/>
+</svg>
