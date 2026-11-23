@@ -54,6 +54,7 @@ function renderAppCard(app) {
         <span class="app-card-visual-label">PRODUCT PREVIEW</span>
       </a>
       <div class="app-card-content">
+        <div class="studio-signature"><img src="assets/epa-mark.svg" alt="" aria-hidden="true"><span>AN EARNPLAYAPPS PRODUCT</span></div>
         <div class="app-card-kicker"><span>${escapeHTML(app.category)}</span><span class="status">${escapeHTML(app.status)}</span></div>
         <h3>${escapeHTML(app.name)}</h3>
         <p>${escapeHTML(app.tagline)}</p>
@@ -96,6 +97,7 @@ function renderAppDetail(detail, app) {
       <a class="product-back product-back-top" href="store.html">← ALL PRODUCTS</a>
       <section class="product-hero">
         <div class="product-hero-copy">
+          <div class="studio-signature product-signature"><img src="assets/epa-mark.svg" alt="" aria-hidden="true"><span>AN EARNPLAYAPPS ORIGINAL</span></div>
           <div class="eyebrow">${escapeHTML(app.category).toUpperCase()} · EARNPLAYAPPS PRODUCT</div>
           <h1>${escapeHTML(app.name)}</h1>
           <p class="product-tagline">${escapeHTML(app.tagline)}</p>
@@ -141,6 +143,7 @@ function renderStoreCard(app) {
     <article class="store-product-card">
       <a class="store-card-visual" href="app.html?id=${id}" aria-label="Preview ${escapeHTML(app.name)}">${previewMarkup(app.previewType, true)}<span class="visual-open">EXPLORE PRODUCT ↗</span></a>
       <div class="store-card-content">
+        <div class="studio-signature"><img src="assets/epa-mark.svg" alt="" aria-hidden="true"><span>AN EARNPLAYAPPS PRODUCT</span></div>
         <div class="store-card-kicker"><span>${escapeHTML(app.category)}</span><span class="status">${escapeHTML(app.status)}</span></div>
         <h3>${escapeHTML(app.name)}</h3><p>${escapeHTML(app.tagline)}</p>
         <div class="store-card-bottom"><span><small>PRO MONTHLY PROPOSAL</small><b>${priceText(starting)}<i>/mo</i></b></span><a class="card-link" href="app.html?id=${id}">Discover product →</a></div>
