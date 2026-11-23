@@ -19,7 +19,7 @@ function safeDownloadURL(value) {
 }
 
 function appIconMarkup(type, extraClass = "") {
-  const icons = { convert: "all-convert-icon.svg", qr: "qr-scanner-icon.svg", calculator: "e-calculator-icon.svg" };
+  const icons = { convert: "all-convert-icon.webp", qr: "qr-scanner-icon.webp", calculator: "e-calculator-icon.webp" };
   const file = icons[type] || icons.convert;
   const names = { convert: "All Convert", qr: "QR Scanner", calculator: "E-Calculator" };
   return `<img class="product-app-icon ${extraClass}" src="assets/${file}" alt="${names[type] || "EarnPlayApps app"} icon" loading="lazy">`;
