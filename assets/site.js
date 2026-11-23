@@ -102,3 +102,45 @@ async function loadApps() {
 }
 
 loadApps();
+
+function renderStoreCard(app) {
+  const id = encodeURIComponent(app.id);
+  return `
+    <article class="app-card store-card">
+      <div class="app-icon ${escapeHTML(app.theme)}" aria-hidden="true">${escapeHTML(app.icon)}</div>
+      <h3>${escapeHTML(app.name)}</h3>
+      <p>${escapeHTML(app.tagline)}</p>
+      <div class="meta"><span>${escapeHTML(app.category)}</span><span class="status">${escapeHTML(app.status)}</span></div>
+      <span class="store-price">Pricing coming soon</span>
+      <a class="card-link" href="app.html?id=${id}">Explore app details →</a>
+    </article>`;
+}
+
+async function loadStore() {
+  const grid = $("#store-grid");
+  if (!grid) return;
+  const search = $("#store-search");
+  try {
+    const response = await fetch("apps.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("App directory request failed");
+    const apps = await response.json();
+    if (!Array.isArray(apps)) throw new Error("App directory format is invalid");
+
+    const render = () => {
+      const term = (search?.value || "").trim().toLowerCase();
+      const filtered = apps.filter((app) =>
+        [app.name, app.category, app.tagline, app.description]
+          .some((value) => String(value || "").toLowerCase().includes(term))
+      );
+      grid.innerHTML = filtered.length
+        ? filtered.map(renderStoreCard).join("")
+        : "<p>No apps match your search. Try another name or category.</p>";
+    };
+    search?.addEventListener("input", render);
+    render();
+  } catch {
+    grid.innerHTML = "<p>The app collection is temporarily unavailable. Please try again later.</p>";
+  }
+}
+
+loadStore();
