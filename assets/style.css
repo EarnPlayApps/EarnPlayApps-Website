@@ -592,3 +592,5 @@ footer .brand-mark{width:42px;height:42px;flex-basis:42px}
 
 .product-mini-icon{object-fit:contain;background:transparent;box-shadow:none;border-radius:12px}
 .showcase-product-icon{object-fit:contain;background:transparent;border:0;box-shadow:none;padding:0;border-radius:12px}
+
+.showcase-official-icon{display:block;width:104px;height:104px;object-fit:contain;margin:17px 0 12px;filter:drop-shadow(0 12px 22px #0007)}
