@@ -47,7 +47,19 @@ function previewMarkup(type, compact = false) {
 
 function renderAppCard(app) {
   const id = encodeURIComponent(app.id);
-  return `<article class="app-card"><div class="app-icon ${escapeHTML(app.theme)}" aria-hidden="true">${escapeHTML(app.icon)}</div><h3>${escapeHTML(app.name)}</h3><p>${escapeHTML(app.tagline)}</p><div class="meta"><span>${escapeHTML(app.category)}</span><span class="status">${escapeHTML(app.status)}</span></div><a class="card-link" href="app.html?id=${id}">View app details →</a></article>`;
+  return `
+    <article class="app-card">
+      <a class="app-card-visual" href="app.html?id=${id}" aria-label="Explore ${escapeHTML(app.name)}">
+        ${previewMarkup(app.previewType, true)}
+        <span class="app-card-visual-label">PRODUCT PREVIEW</span>
+      </a>
+      <div class="app-card-content">
+        <div class="app-card-kicker"><span>${escapeHTML(app.category)}</span><span class="status">${escapeHTML(app.status)}</span></div>
+        <h3>${escapeHTML(app.name)}</h3>
+        <p>${escapeHTML(app.tagline)}</p>
+        <a class="app-card-link" href="app.html?id=${id}">Explore app details <span>→</span></a>
+      </div>
+    </article>`;
 }
 
 function priceText(value) { return value ? escapeHTML(value) : "—"; }
