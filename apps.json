@@ -1,5 +1,53 @@
 [
- {"id":"all-convert","name":"All Convert","category":"Productivity","tagline":"Convert files with less friction.","description":"A mobile-first file conversion utility designed to make common file tasks easier. The project is in development; download availability will be announced here when a verified release is ready.","status":"In development","version":"Coming soon","icon":"AC","theme":"purple","features":["Simple mobile-first workflow","Support for multiple file types","Preview and save options planned"],"download":null},
- {"id":"qr-scanner","name":"QR Scanner","category":"Utilities","tagline":"Scan QR codes and barcodes with ease.","description":"A focused QR and barcode scanning app with a clean interface and practical scan controls. The project is in development; download availability will be announced here when a verified release is ready.","status":"In development","version":"Coming soon","icon":"QR","theme":"orange","features":["QR code and barcode scanning","Gallery scanning fallback planned","Scan history and useful controls"],"download":null},
- {"id":"e-calculator","name":"E-Calculator","category":"Utilities","tagline":"Everyday calculations, made simple.","description":"A straightforward calculator project focused on a clear, easy-to-use mobile experience. The project is in development; download availability will be announced here when a verified release is ready.","status":"In development","version":"Coming soon","icon":"EC","theme":"blue","features":["Clean calculator interface","Everyday calculation tools","Mobile-friendly controls"],"download":null}
+ {
+  "id":"all-convert",
+  "name":"All Convert",
+  "category":"Productivity",
+  "tagline":"One powerful workspace for your everyday file conversions.",
+  "description":"All Convert is being developed as a versatile mobile file-conversion workspace. The goal is to make common document, image and file tasks feel simple: choose a file, convert it, review the result and save or share it from one focused workflow. AVIF support is part of the planned format experience.",
+  "status":"In development",
+  "version":"Coming soon",
+  "icon":"AC",
+  "theme":"purple",
+  "previewType":"convert",
+  "audience":"For students, professionals, creators and anyone who regularly works with files on a phone.",
+  "features":["Convert supported documents and images from one mobile workspace","Choose files from your device with a focused file-picker workflow","Preview converted results before saving","Save, share or open supported output files","AVIF image support is planned to remain available","A clean workflow designed for phone screens"],
+  "useCases":["Prepare documents for sharing","Convert images for websites or messages","Keep common file tasks together on your phone"],
+  "plans":[{"name":"Free","monthly":"RM0","yearly":"RM0","lifetime":"RM0","description":"Try the essential conversion workflow with limited usage."},{"name":"Pro Monthly","monthly":"RM9.90","yearly":null,"lifetime":null,"description":"Pro access billed monthly."},{"name":"Pro Yearly","monthly":null,"yearly":"RM59.90","lifetime":null,"description":"A lower-cost option for regular users."},{"name":"Pro Lifetime","monthly":null,"yearly":null,"lifetime":"RM99.90","description":"One-time payment for lifetime Pro access, subject to the final published terms."}],
+  "download":null
+ },
+ {
+  "id":"qr-scanner",
+  "name":"QR Scanner",
+  "category":"Utilities",
+  "tagline":"A fast, focused way to scan QR codes and barcodes.",
+  "description":"QR Scanner is being developed to make everyday scanning straightforward. Open the scanner, point your camera at a code and review the result in a clean interface. The planned experience also includes gallery-based scanning when camera access is unavailable, plus useful scan history and controls.",
+  "status":"In development",
+  "version":"Coming soon",
+  "icon":"QR",
+  "theme":"orange",
+  "previewType":"qr",
+  "audience":"For shoppers, travellers, small businesses and everyday users who need to read QR codes and barcodes.",
+  "features":["Scan QR codes and supported barcode formats","A focused scan frame without an oversized camera preview","Gallery scanning fallback for supported images","Review scan results before opening links","Scan history for convenient access to previous results","Sound, vibration and automatic-link settings planned"],
+  "useCases":["Open website and product QR codes","Read barcodes while shopping or managing stock","Scan a saved code image from your gallery"],
+  "plans":[{"name":"Free","monthly":"RM0","yearly":"RM0","lifetime":"RM0","description":"Essential scanning with usage limits."},{"name":"Pro Monthly","monthly":"RM4.90","yearly":null,"lifetime":null,"description":"Pro access billed monthly."},{"name":"Pro Yearly","monthly":null,"yearly":"RM29.90","lifetime":null,"description":"A lower-cost option for regular users."},{"name":"Pro Lifetime","monthly":null,"yearly":null,"lifetime":"RM49.90","description":"One-time payment for lifetime Pro access, subject to the final published terms."}],
+  "download":null
+ },
+ {
+  "id":"e-calculator",
+  "name":"E-Calculator",
+  "category":"Utilities",
+  "tagline":"Everyday calculations with a clean, capable interface.",
+  "description":"E-Calculator is being developed around a clear everyday calculator experience, with additional practical calculation tools kept easy to find. The visual direction retains its distinctive orange identity while keeping the interface comfortable for daily use.",
+  "status":"In development",
+  "version":"Coming soon",
+  "icon":"EC",
+  "theme":"blue",
+  "previewType":"calculator",
+  "audience":"For students, home users, workers and anyone who needs quick calculations throughout the day.",
+  "features":["A clear everyday calculator layout","Responsive keypad designed for phone screens","Additional practical calculator tools","Consistent orange product identity","Simple controls designed for quick access"],
+  "useCases":["Daily arithmetic and quick calculations","Study and work calculations","Access extra calculation tools when needed"],
+  "plans":[{"name":"Free","monthly":"RM0","yearly":"RM0","lifetime":"RM0","description":"Core calculator functions at no cost."},{"name":"Pro Monthly","monthly":"RM3.90","yearly":null,"lifetime":null,"description":"Pro access billed monthly."},{"name":"Pro Yearly","monthly":null,"yearly":"RM24.90","lifetime":null,"description":"A lower-cost option for regular users."},{"name":"Pro Lifetime","monthly":null,"yearly":null,"lifetime":"RM39.90","description":"One-time payment for lifetime Pro access, subject to the final published terms."}],
+  "download":null
+ }
 ]
